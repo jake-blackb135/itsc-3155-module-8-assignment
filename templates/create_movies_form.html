@@ -1,0 +1,42 @@
+{% extends '_layout.html' %}
+
+{% block title %}Movie Rating App | Create Movie Rating{% endblock %}
+
+{% block body %}
+<h1 class="mb-5">Create Movie Rating</h1>
+<p class="mb-3">Create a movie rating below</p>
+
+<form action="/movies" method="post" style="padding-bottom:10px">
+    <label for="t">Movie Title</label><br>
+    <input type="text" class="form-control w-50" name="t" id="t" placeholder="Enter the title of the movie..." autocomplete="off">
+
+    <br>
+
+    <label for="d">Movie Director</label><br>
+    <input type="text" class="form-control w-50" name="d" id="d" placeholder="Enter the director of the movie..." autocomplete="off">
+
+    <br>
+
+    <div style="padding-bottom:10px"></div>
+    <label for="r">Movie Rating</label><br>
+    <select class="dropdown" name="r" id="r">
+        <option value="" selected>Select a rating...</option>
+        <option value="10">10 stars</option>
+        <option value="9">9 stars</option>
+        <option value="8">8 stars</option>
+        <option value="7">7 stars</option>
+        <option value="6">6 stars</option>
+        <option value="5">5 stars</option>
+        <option value="4">4 stars</option>
+        <option value="3">3 stars</option>
+        <option value="2">2 stars</option>
+        <option value="1">1 star</option> 
+    </select>
+
+    <br><div style="padding-bottom:50px"></div>
+    
+    <button type="submit" class="btn btn-dark">
+        <a style="color:white">Submit</a>
+    </button>
+</form>
+{% endblock %}

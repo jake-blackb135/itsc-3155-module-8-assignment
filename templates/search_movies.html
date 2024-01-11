@@ -1,0 +1,42 @@
+{% extends '_layout.html' %}
+
+{% block title %}Movie Rating App | Search Movie Ratings{% endblock %}
+
+{% block body %}
+<h1 class="mb-5">Search Movie Ratings</h1>
+<p class="mb-3">Search for a movie rating below</p>
+
+<form action='/movies/search' method="get" style="padding-bottom:10px">
+<label for="title">Movie Title</label><br>
+<input type="text" class="form-control w-50" name="title" id="title" placeholder="Enter the title of the movie..." autocomplete="off">
+
+<br><div style="padding-bottom:10px"></div>
+
+<button type="submit"  class="btn btn-primary">Submit</button>
+</form>
+
+{% if title !='' %}
+
+<table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Movie Title</th>
+                <th scope="col">Movie Director</th>
+                <th scope="col">Rating (out of 10)</th>
+            </tr>
+        </thead>
+    {%for movie in movies:%}
+        <tbody>
+        
+            <tr>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.director }}</td>
+                <td>{{ movie.rating }}</td>
+            </tr>
+        
+        </tbody>
+    {% endfor %}
+</table>
+
+{% endif %}
+{% endblock %}
